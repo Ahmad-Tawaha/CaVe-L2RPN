@@ -41,19 +41,11 @@ real grid. This repository contains the agent submitted by team SAGE × ANL to t
 During deployment a **drift guard** keeps estimating the line reactances from the observations. If they move away from
 the identified ones, it switches off the main-simulator correction and points the verifier at the online estimate.
 
-## What the agent accesses (Sim2Real)
+## Sim2Real
 
-The agent never reads the characteristics of the real environment. It learns about the real grid only from what it
-observes while playing.
-
-* **Training stage (`CaVeAgent.train`).** The agent plays the practice weeks through the grid2op API (`reset`, `step`
-  with its own actions). For parallel rollouts it creates copies of the same environment from `env.get_path_env()`.
-  It estimates the line reactances from the observations only. It reads two items of published information:
-  * the agent's simulator grid, `grid_forecast.json`, which is the published grid used by `obs.simulate`;
-  * the list of lines the environment's opponent may attack.
-* **What it does not read.** It does not read the real grid file (`grid.json`) or any other description of the real
-  grid's parameters.
-* **Deployment.** The agent uses only the observation, `obs.simulate` and the result of its own training stage.
+CaVe learns about the real grid only by interacting with it: in the training stage it plays the practice weeks and
+estimates the line reactances from its own observations. Its planning simulator is the published grid
+(`grid_forecast.json`).
 
 ## Install
 
