@@ -1,0 +1,10 @@
+# tested versions (Python 3.11)
+grid2op==1.12.5
+lightsim2grid==0.13.1
+pandapower==3.4.0
+numpy==2.3.5
+scipy==1.16.3
+pandas==2.3.3
+scikit-learn==1.9.0
+torch==2.12.1
+torch_geometric==2.8.0

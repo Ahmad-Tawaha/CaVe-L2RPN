@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cave-grid"
+version = "1.0.0"
+description = "CaVe: calibrated verification for power-grid topology control (L2RPN IDF, grid2op)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "Apache-2.0 (cave/actions.py and cave/ranker.py: MPL-2.0)"}
+dependencies = ["grid2op>=1.12", "lightsim2grid>=0.13", "pandapower>=3.4", "numpy>=2.0", "scipy", "pandas",
+                "scikit-learn>=1.9", "torch>=2.0", "torch_geometric>=2.8"]
+
+[tool.setuptools]
+packages = ["cave"]
+
+[tool.setuptools.package-data]
+cave = ["weights/*"]
