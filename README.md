@@ -44,7 +44,7 @@ the identified ones, it switches off the main-simulator correction and points th
 ## Sim2Real
 
 CaVe learns about the real grid only by interacting with it: in the training stage it plays the practice weeks and
-estimates the line reactances from its own observations. Its planning simulator is the published grid
+estimates the line parameters from its own observations. Its planning simulator is the published grid
 (`grid_forecast.json`).
 
 ## Install
