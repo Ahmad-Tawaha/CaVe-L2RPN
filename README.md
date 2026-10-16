@@ -133,8 +133,6 @@ tests/
 * **Grid-specific data.** The attackable lines (`config.ATTACKABLE_LINES`) and the action library belong to the L2RPN
   IDF environment. The training stage adds to the contingency set any line it sees attacked and any line the opponent
   declares.
-* **What the identified model corrects.** It corrects line reactances only. Resistances, transformers and injections
-  come from the published grid and the forecast.
 * **Determinism.** For a given observation sequence and process, the decisions are deterministic. They may differ
   across platforms or library versions, because the simulator's floating-point results can differ.
 
